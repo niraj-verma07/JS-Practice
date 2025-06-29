@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--  Create an unordered list. Allow user to add and remove list item dynaically using buttons -->
+
+    <ul>
+        
+    </ul>
+    <input type="text" placeholder="Add new item">
+    <button id="add">Add</button>
+    <button id="remove">Remove</button>
+
+    <script>
+        let input = document.querySelector("input");
+        let add = document.querySelector("#add");
+        let remove = document.querySelector("#remove");
+        let ul = document.querySelector("ul")
+        let li;
+
+        add.addEventListener("click", function(){
+           if(input.value.trim() === ''){
+        }else{
+            li = document.createElement("li");
+            li.textContent = input.value;
+            // console.log(li);
+            ul.appendChild(li);
+            input.value = '';
+           }
+        })
+
+        remove.addEventListener("click", function(){
+            ul.removeChild(li);
+        })
+
+
+    </script>
+</body>
+</html>

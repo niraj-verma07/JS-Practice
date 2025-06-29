@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body,html{
+            width: 100%;
+            height: 100%;
+        }
+        body{
+            padding: 30px;
+        }
+        textarea{
+            width: 500px;
+            height: 320px;
+            font-size: 18px;
+            font-weight: 500;
+            outline-color: royalblue;
+            resize: none;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!--  Build a character counter for a text area or input filed, which updates in real time user types and enforces a character limit -->
+    <h3>Character Count : <span id="counter">0</span></h3>
+    <textarea></textarea>
+    <script>
+        let textara = document.querySelector("textarea");
+        let counter = document.querySelector("#counter")
+        textara.addEventListener("input", function(){
+            // console.log(textara.value.length);
+            counter.textContent = textara.value.length
+        });
+    </script>
+</body>
+</html>

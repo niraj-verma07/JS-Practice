@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #tabs {
+        display: flex;
+    }
+
+    .tab {
+        padding: 10px 20px;
+        margin-left: 20px;
+        background-color: aquamarine;
+        border: 2px solid black;
+        border-radius: 4px;
+        font-weight: 700;
+    }
+
+    h3 {
+        display: none;
+        margin-top: 20px;
+        width: 50%;
+    }
+</style>
+
+<body>
+    <!--  Create a tabbed interface where clicking on tabs display different content sections without page reload -->
+    <div id="tabs">
+        <div id="home" class="tab">Home</div>
+        <div id="about" class="tab">About</div>
+        <div id="contact" class="tab">Contact</div>
+    </div>
+    <h3 id="hometext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo laudantium adipisci maxime
+        error, et debitis. Quibusdam sunt deleniti laborum quod facilis aliquam dolor voluptas, dolorem rerum, eligendi
+        tenetur, et sit perspiciatis corrupti voluptate temporibus a libero modi odit vero provident ipsa? Quaerat,
+        saepe. Omnis corrupti hic debitis sed nostrum at ad libero adipisci, blanditiis quibusdam architecto ipsa
+        assumenda ea harum. Voluptate, obcaecati sequi. Est repellendus minima debitis vitae hic dignissimos in quo
+        recusandae officia iure nulla culpa natus non ea ipsam, laborum earum dolorem quaerat voluptatem sed laudantium
+        voluptatum. Eum omnis consectetur est dolorum, sit eos exercitationem aspernatur ad laboriosam quidem aut
+        suscipit dolorem nisi temporibus nobis ratione magnam enim quos incidunt quo autem? Mollitia beatae nihil
+        quibusdam neque iusto eius culpa veritatis rerum obcaecati quaerat commodi officia corporis laborum, consequatur
+        unde, reprehenderit eveniet veniam facilis explicabo sed placeat deserunt. Praesentium ratione molestias, sunt
+        quia velit laudantium quae nihil. Placeat eum sit quisquam architecto corporis dolores sequi hic quod labore non
+        nihil magni, voluptatum autem laborum voluptatibus libero delectus maxime distinctio minima deleniti fugiat
+        dignissimos recusandae. Fugiat soluta cum odio eaque laborum possimus numquam tempore molestiae ex, sit officiis
+        nulla voluptatibus vero repellendus aut harum ipsa modi. Odio, recusandae a?</h3>
+
+    <h3 id="abouttext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum quas, ea nobis laudantium
+        expedita doloremque possimus, tempore sequi saepe perferendis similique, id quod voluptatibus. Exercitationem
+        quasi nihil distinctio, recusandae at porro fugit sed mollitia fuga, saepe sint culpa accusamus est aspernatur,
+        earum tenetur facere. Ab et maiores voluptate reiciendis natus, aliquid nemo harum rem sit eos dolor,
+        perferendis commodi nisi unde exercitationem blanditiis explicabo illum praesentium sint animi quo officia,
+        deleniti totam. Dolorem, aperiam. Voluptate veniam velit doloremque atque recusandae similique magni! Aspernatur
+        quo aut debitis saepe esse, minima magni recusandae? Voluptatum culpa eius harum temporibus quaerat tenetur
+        officiis dolores reprehenderit enim? Commodi, soluta modi. Enim a impedit maxime illum nulla ea eos eaque,
+        cupiditate quam quis quibusdam unde officiis alias recusandae nisi deleniti voluptate accusantium, repellendus
+        fugiat obcaecati consectetur eligendi sunt. Cum sint ducimus inventore nihil laboriosam nam praesentium a, ex
+        doloremque provident temporibus repellat possimus est hic eveniet?</h3>
+
+    <h3 id="contacttext">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam, fugiat similique autem quos
+        cum nostrum veniam expedita inventore dolores eligendi voluptatem consequuntur blanditiis. Aperiam voluptate aut
+        nesciunt eius exercitationem dignissimos iusto sint aspernatur ipsa ea perspiciatis adipisci tempora est
+        delectus, deserunt, quibusdam obcaecati libero veniam ipsam repudiandae vitae pariatur neque vero. Minus
+        recusandae quo facilis modi perspiciatis labore ipsa provident excepturi atque a cum laudantium, animi aliquam,
+        ab repudiandae earum necessitatibus velit commodi obcaecati nulla. Dolorum ad asperiores quaerat pariatur fugit
+        eius, repellendus neque voluptatibus facilis maxime quidem doloribus officiis voluptatem nemo eligendi atque
+        tempora optio in debitis ab. Reiciendis.</h3>
+
+
+    <script>
+        // let home = document.querySelector("#home");
+        // let about = document.querySelector("#about");
+        // let contact = document.querySelector("#contact");
+
+        // let hometext = document.querySelector("#hometext");
+        // let abouttext = document.querySelector("#abouttext");
+        // let contacttext = document.querySelector("#contacttext");
+
+        // hometext.style.display = "block";
+        // hometext.style.width = "50%";
+
+        // home.addEventListener("click", function () {
+        //     removeText();
+        //     hometext.style.display = "block";
+        //     hometext.style.width = "50%";
+        // });
+
+        // about.addEventListener("click", function () {
+        //     removeText();
+        //     abouttext.style.display = "block";
+        //     abouttext.style.width = "50%";
+        // });
+
+        // contact.addEventListener("click", function () {
+        //     removeText();
+        //     contacttext.style.display = "block";
+        //     contacttext.style.width = "50%";
+        // });
+
+        // function removeText() {
+        //     document.querySelectorAll("h3").forEach(function (h3) {
+        //         h3.style.display = "none";
+        //     })
+        // }
+
+        let divs = document.querySelectorAll(".tab");
+        let texts = document.querySelectorAll("h3");
+
+        texts[0].style.display = "block";
+        texts[0].style.width = "50%";
+
+        divs.forEach(function (div, index) {
+            div.addEventListener("click", function () {
+                hideAllText();
+                texts[index].style.display = "block";
+                texts[index].style.width = "50%";
+            });
+        });
+
+        function hideAllText(){
+            texts.forEach(function(text){
+                text.style.display = "none";
+            });
+        }
+    </script>
+</body>
+
+</html>

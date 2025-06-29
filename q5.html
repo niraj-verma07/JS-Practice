@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Build a countdown timer that starts when a button is clicked and updates the display in real time -->
+
+    <h3>
+        <h3>
+            <button id="start">Start</button>
+            <button id="stop">Stop</button>
+            <button id="restart">Restart</button>
+
+            <!-- <script>
+           
+                let start = document.querySelector("#start");
+                let stop = document.querySelector("#stop");
+                let restart = document.querySelector("#restart");
+                let h3 = document.querySelector("h3");
+                let count = 0;
+                let interval = null;
+
+                let counter = start.addEventListener("click", function () {
+                    interval = setInterval(function () {
+                        h3.textContent = count;
+                        count++;
+                    }, 1000);
+                })
+
+                stop.addEventListener("click", function () {
+                    clearInterval(interval);
+                });
+
+                restart.addEventListener("click", function () {
+                    clearInterval(interval); // stop any existing interval
+                    count = 0;               // reset the counter
+                    h3.textContent = count;  // update display to 0
+                    interval = setInterval(function () {
+                        h3.textContent = count;
+                        count++;
+                    }, 1000);
+
+                });
+            </script> -->
+
+            <script>
+    // Get references to buttons and the h3 element
+    let start = document.querySelector("#start");
+    let stop = document.querySelector("#stop");
+    let restart = document.querySelector("#restart");
+    let h3 = document.querySelector("h3");
+
+    // Initialize counter value and interval reference
+    let count = 0;
+    let interval = null; // Used to store the interval ID
+
+    // Function to update the display and increment the count
+    function updateDisplay() {
+        h3.textContent = count;
+        count++;
+    }
+
+    // Start button: begins the timer if not already running
+    start.addEventListener("click", function () {
+        if (interval === null) {
+            interval = setInterval(updateDisplay, 1000); // Call updateDisplay every second
+        }
+    });
+
+    // Stop button: stops the running timer
+    stop.addEventListener("click", function () {
+        clearInterval(interval); // Clear the interval
+        interval = null;         // Reset interval variable to allow restarting later
+    });
+
+    // Restart button: stops the timer, resets the counter, and starts again from 0
+    restart.addEventListener("click", function () {
+        clearInterval(interval); // Stop current interval
+        count = 0;               // Reset the count to 0
+        h3.textContent = count;  // Update display immediately
+        interval = setInterval(updateDisplay, 1000); // Start the timer again
+    });
+</script>
+
+</body>
+
+</html>

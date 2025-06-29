@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <style>
+    /* Style for the progress bar */
+    #progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 15px;
+      background-color: #4caf50;
+      width: 0%;
+      z-index: 1000;
+    }
+
+    /* Dummy content to enable scrolling */
+    .content {
+      height: 3000px;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+    <!-- show a progess bar which shows how much page has been scrolled in js -->
+
+     <div id="progress-bar"></div>
+
+  <!-- Content -->
+  <div class="content">
+    <h1>Scroll Down</h1>
+  </div>
+
+    <script>
+    // Listen for the scroll event on the window
+    window.addEventListener("scroll", () => {
+      // Get the number of pixels the document is currently scrolled vertically
+      const scrollTop = document.documentElement.scrollTop;
+
+      // Calculate the total scrollable height (total height - viewport height)
+      const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+      // Calculate the scroll percentage
+      const scrollPercent = (scrollTop / scrollHeight) * 100;
+
+      // Set the width of the progress bar to match the scroll percentage
+      document.getElementById("progress-bar").style.width = scrollPercent + "%";
+    });
+  </script>
+</body>
+</html>
