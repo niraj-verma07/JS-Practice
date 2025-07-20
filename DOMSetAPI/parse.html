@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+</head>
+<body>
+    
+    <script>
+        // Json data are always in string format
+        let jsonRes = '{"fact":"Statistics indicate that animal lovers in recent years have shown a preference for cats over dogs!","length":98}';
+
+        //JSON.parse is used to convert the json data into js objects
+        let jsonData = JSON.parse(jsonRes);
+        console.log(jsonData);
+        console.log(jsonData.fact);
+
+        let student = {
+            name : "Niraj",
+            age : "21",
+            city : "Ranchi"
+        }
+
+        //JSON.stringify is used to convert js objects into json data
+        let json = JSON.stringify(student);
+        console.log(json);
+
+    </script>
+</body>
+</html>
