@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+ <!-- Using Query Strings -->
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+
+    <input type="text" placeholder="Enter country">
+    <button>Search</button>
+    <ul id="list">
+
+    </ul>
+
+    <script>
+        let url = "http://universities.hipolabs.com/search?name=";
+        let btn = document.querySelector("button");
+
+        async function getCollges(country) {
+            try{
+                let res = await axios.get(url + country);
+                // console.log(res.data);
+                return res.data
+            }catch(err){
+                console.log("Error : "+err);
+                return [];
+            }
+        }
+
+        function show(collArr){
+            let list = document.querySelector("#list");
+            list.innerText = "";
+            for(coll of collArr){
+                console.log(coll.name);
+
+                let li = document.createElement("li");
+                li.innerText = coll.name;
+                list.appendChild(li);
+            }
+        }
+
+        btn.addEventListener("click", async ()=>{
+            let country = document.querySelector("input").value
+            // console.log(country)
+           let collArr = await getCollges(country);
+           console.log(collArr);
+           show(collArr);
+        })
+
+    </script>
+
+</body>
+</html>
