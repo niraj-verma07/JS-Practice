@@ -6,9 +6,16 @@
     <title>Discount Calculator</title>
 </head>
 <body>
-    
-    <script>
 
+    <script>
+        function discountCalc(discount){
+            return function(amount){
+                return amount - amount * (discount / 100)
+            }
+        }
+
+        let discount = discountCalc(10);
+        console.log(discount(100))
     </script>
 </body>
 </html>
