@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Option Event</title>
+   </head>
+<body>
+    <h1 id="device">Choose your device</h1>
+    <select name="" id="">
+        <option selected disabled>Select your device</option>
+        <option value="Apple">Apple iphone</option>
+        <option value="Samsung">Samsung</option>
+        <option value="Xiomi">Xiomi</option>
+        <option value="Realme">Realme</option>
+        <option value="OPPO">OPPO</option>
+    </select>
+    <script>
+        let device = document.querySelector("#device");
+        let sel = document.querySelector("select");
+
+        sel.addEventListener("change", (dets)=>{
+            console.log(dets.target.value);
+            device.innerHTML = `${dets.target.value} is Selected`
+        })
+
+    </script>
+</body>
+</html>
